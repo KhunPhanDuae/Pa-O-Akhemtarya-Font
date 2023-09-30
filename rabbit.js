@@ -1,7 +1,7 @@
 /**
- * Rabbit Converter for PaOh Zawgyi and Unicode By Khun Htetz Naing
- * Facebook: https://facebook.com/KhunHtetzNaing0
- * Repo: https://github.com/KhunHtetzNaing/PaOh-Zawgyi-Unicode-Converter
+ * Rabbit Converter for Pa'O Zawgyi and Unicode By Khun Phan Duae 
+ * Facebook: https://facebook.com/7Phan.D
+ * Repo: https://github.com/KhunPhanDuae/Pa-O-Akhemtarya-Font
  * Original Repo: https://github.com/Rabbit-Converter/Rabbit/
  * Credit: Rabbit Converter
 */
