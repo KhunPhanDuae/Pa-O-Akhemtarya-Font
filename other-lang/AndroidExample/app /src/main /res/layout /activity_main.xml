@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--Zawgyi-->
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/zgMainLayout"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/zgPaste"
+                android:text="Paste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/zgCopy"
+                android:text="Copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_above="@id/zgMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <EditText
+            android:gravity="start"
+            android:hint="Zawgyi Text"
+            android:id="@+id/edZawgyi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+
+    <!--Unicode-->
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/uniMainLayout"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/uniPaste"
+                android:text="Paste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/uniCopy"
+                android:text="Copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_above="@id/uniMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <EditText
+            android:gravity="start"
+            android:hint="Unicode Text"
+            android:id="@+id/edUni"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+</LinearLayout>
