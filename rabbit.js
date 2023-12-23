@@ -15,7 +15,7 @@ var Rabbit = {
     var rule = [
       {
           "from": "\u1004\u103a\u1039",
-          "to": "ကအဝ်ႏဒါႏ"
+          "to": "\u108f"
       },
       {
           "from": "\u1039\u1010\u103d",
