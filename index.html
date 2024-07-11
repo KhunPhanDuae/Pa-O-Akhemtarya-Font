@@ -124,8 +124,10 @@ function onchangeHandler(textField,tochangeField,toconv) {
     <script>
         function convertText() {
             const mappings = {
-                '၊': 'ꩻ',
-                '။': 'ႏ'
+                ',': 'ꩻ',
+                ';': 'ႏ',
+		       '။': 'ႏ',
+		      '၊': 'ꩻ'
             };
             
             let inputText = document.getElementById('inputText').value;
