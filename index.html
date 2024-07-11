@@ -115,6 +115,39 @@ function onchangeHandler(textField,tochangeField,toconv) {
 
 
 
-</script>
+</script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Converter</title>
+    <script>
+        function convertText() {
+            const mappings = {
+                '၊': 'ꩻ',
+                '။': 'ႏ'
+            };
+            
+            let inputText = document.getElementById('inputText').value;
+            let outputText = inputText;
+
+            for (const [original, replacement] of Object.entries(mappings)) {
+                const regex = new RegExp(original, 'g');
+                outputText = outputText.replace(regex, replacement);
+            }
+
+            document.getElementById('outputText').value = outputText;
+        }
+    </script>
+</head>
+<body>
+    <h1>Character Converter</h1>
+    <textarea id="inputText" rows="10" cols="50" placeholder="Enter text here..."></textarea>
+    <br>
+    <button onclick="convertText()">Convert</button>
+    <br>
+    <textarea id="outputText" rows="10" cols="50" placeholder="Converted text will appear here..."></textarea>
+</body>
+</html>
 </body>
     </html>
