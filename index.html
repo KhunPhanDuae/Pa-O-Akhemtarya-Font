@@ -22,6 +22,15 @@
 
             document.getElementById('outputText').value = outputText;
         }
+
+        function copyText() {
+            const outputText = document.getElementById("outputText");
+            outputText.select();
+            document.execCommand("copy");
+            alert("Text copied to clipboard!");
+        }
+    </script>
+   
     </script>
 </head><!DOCTYPE html>
 <html lang="en">
@@ -82,21 +91,6 @@
     
     <button onclick="copyText()">Copy to Clipboard</button>
 
-    <script>
-        function convertText() {
-            const inputText = document.getElementById("inputText").value;
-            // Example of a simple conversion: making the text uppercase
-            const convertedText = inputText.toUpperCase(); // Change logic here if needed
-            document.getElementById("outputText").value = convertedText;
-        }
-
-        function copyText() {
-            const outputText = document.getElementById("outputText");
-            outputText.select();
-            document.execCommand("copy");
-            alert("Text copied to clipboard!");
-        }
-    </script>
     
 </body>
 </html>
