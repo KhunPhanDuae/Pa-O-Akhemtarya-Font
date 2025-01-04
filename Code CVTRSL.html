@@ -30,9 +30,9 @@
           const parts = line.split("-"); // Split by "-"
           if (parts.length === 2) {
             const englishText = parts[0].trim();
-            const Pa'OText = parts[1].trim();
+            const PaOText = parts[1].trim();
             output += `} else if (englishText === "${englishText}") {\n`;
-            output += `    document.getElementById("Pa'OOutput").value = "${Pa'OText}";\n`;
+            output += `    document.getElementById("PaOOutput").value = "${PaOText}";\n`;
           }
         }
       });
