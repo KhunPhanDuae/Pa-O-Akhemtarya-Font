@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="blk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Website</title>
+  <link rel="stylesheet" href="H/styles1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>English to Pa'O (ပအိုဝ်း) Translator</h1>
+
+        <label for="englishInput"><strong>Enter English Text:</strong></label><br>
+        <textarea id="englishInput" rows="4" placeholder="e.g., Hello"></textarea><br>
+
+        <button onclick="translateToPaO()">Translate to Pa'O</button><br><br>
+
+        <label for="PaOOutput"><strong>Translated Text:</strong></label><br>
+        <textarea id="PaOOutput" rows="4" readonly></textarea><br><br>
+
+        <div class="navigation">
+            <a href="index.html">Back to Main Page</a>
+        </div>
+    </div>
+
+    <script>
+        function translateToPaO() {
+            const englishText = document.getElementById("englishInput").value;
+            // Static translation logic
+            if (englishText === "Hello") {
+                document.getElementById("PaOOutput").value = "ခွဲးဟဝ်ဒျာႏ";
+            } else if (englishText === "How are you?") {
+                document.getElementById("PaOOutput").value = "အုံဟဝ်နေꩻ?";
+            } else {
+                document.getElementById("PaOOutput").value = "Translation not available.";
+            }
+        }
+    </script>
+</body>
+</html>
