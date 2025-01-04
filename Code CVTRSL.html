@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="blk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Code Generator</title>
+</head>
+<body>
+  <h1>Auto Code Generator</h1>
+  <p>ပုံစံ: <code>love>ရက်;</code></p>
+
+  <label for="inputText">Input:</label>
+  <textarea id="inputText" rows="5" cols="50" placeholder="e.g., love>ရက်;"></textarea><br><br>
+
+  <button onclick="generateCode()">Generate Code</button>
+
+  <h2>Generated Code:</h2>
+  <textarea id="outputText" rows="10" cols="50" readonly></textarea><br><br>
+
+  <button onclick="copyToClipboard()">Copy Code</button>
+
+  <script>
+    function generateCode() {
+      const inputText = document.getElementById("inputText").value;
+      const lines = inputText.split(";"); // Separate lines by ";"
+      let output = "";
+
+      lines.forEach(line => {
+        if (line.trim()) {
+          const parts = line.split(">"); // Split by ">"
+          if (parts.length === 2) {
+            const englishText = parts[0].trim();
+            const myanmarText = parts[1].trim();
+            output += `} else if (englishText === "${englishText}") {\n`;
+            output += `    document.getElementById("myanmarOutput").value = "${myanmarText}";\n`;
+          }
+        }
+      });
+
+      document.getElementById("outputText").value = output;
+    }
+
+    function copyToClipboard() {
+      const outputText = document.getElementById("outputText");
+      outputText.select();
+      document.execCommand("copy");
+      alert("Code copied to clipboard!");
+    }
+  </script>
+</body>
+</html>
