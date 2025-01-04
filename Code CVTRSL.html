@@ -4,20 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Auto Code Generator</title>
+   <link rel="stylesheet" href="H/styles1.css">
 </head>
 <body>
-  <h1>Auto Code Generator</h1>
-  <p> ပွုံႏစံႏတဲမ်းသွော့ꩻနုဲင်းယို : <code>love-ရက်</code></p>
+  <div class="container">
+    <h1>Auto Code Generator</h1>
+    <p> ပွုံႏစံႏတဲမ်းသွော့ꩻနုဲင်းယို: <code>love-ရက်</code></p>
 
-  <label for="inputText">Input:</label>
-  <textarea id="inputText" rows="5" cols="50" placeholder="e.g., love-ရက်"></textarea><br><br>
+    <label for="inputText"><strong>Input:</strong></label>
+    <textarea id="inputText" rows="5" placeholder="e.g., love-ရက် "></textarea><br>
 
-  <button onclick="generateCode()">Generate Code</button>
+    <button onclick="generateCode()">Generate Code</button>
 
-  <h2>Generated Code:</h2>
-  <textarea id="outputText" rows="10" cols="50" readonly></textarea><br><br>
+    <h2>Generated Code:</h2>
+    <textarea id="outputText" rows="10" readonly></textarea><br>
 
-  <button onclick="copyToClipboard()"> ထူႏကူꩻ ကိုဒ်</button>
+    <button onclick="copyToClipboard()"> ထူႏကူꩻ ကိုဒ် </button>
+
+    <div class="navigation">
+      <a href="page2.html">Go to Another Page</a>
+    </div>
+  </div>
 
   <script>
     function generateCode() {
