@@ -7,17 +7,17 @@
 </head>
 <body>
   <h1>Auto Code Generator</h1>
-  <p>ပွုံႏစံႏတဲမ်းသွော့ꩻနုဲင်းယို: <code>love>ရက်;</code></p>
+  <p> ပွုံႏစံႏတဲမ်းသွော့ꩻနုဲင်းယို : <code>love-ရက်</code></p>
 
   <label for="inputText">Input:</label>
-  <textarea id="inputText" rows="5" cols="50" placeholder="e.g., love>ရက်;"></textarea><br><br>
+  <textarea id="inputText" rows="5" cols="50" placeholder="e.g., love-ရက်"></textarea><br><br>
 
   <button onclick="generateCode()">Generate Code</button>
 
   <h2>Generated Code:</h2>
   <textarea id="outputText" rows="10" cols="50" readonly></textarea><br><br>
 
-  <button onclick="copyToClipboard()">Copy Code</button>
+  <button onclick="copyToClipboard()"> ထူႏကူꩻ ကိုဒ်</button>
 
   <script>
     function generateCode() {
@@ -27,12 +27,12 @@
 
       lines.forEach(line => {
         if (line.trim()) {
-          const parts = line.split(">"); // Split by ">"
+          const parts = line.split("-"); // Split by "-"
           if (parts.length === 2) {
             const englishText = parts[0].trim();
-            const myanmarText = parts[1].trim();
+            const Pa'OText = parts[1].trim();
             output += `} else if (englishText === "${englishText}") {\n`;
-            output += `    document.getElementById("myanmarOutput").value = "${myanmarText}";\n`;
+            output += `    document.getElementById("Pa'OOutput").value = "${Pa'OText}";\n`;
           }
         }
       });
