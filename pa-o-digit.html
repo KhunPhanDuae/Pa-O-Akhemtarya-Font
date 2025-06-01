@@ -23,53 +23,50 @@
     <p>သာမာန်စာသားနှင့် ရောနှောဖော်ပြခြင်း: ဝက်ဆိုက်တွင် ဂဏန်း <span class="pa-o-unicode" data-unicode="116D3">&#x116D3;</span> ခုရှိသည်။</p>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Select all elements that have the class 'pa-o-unicode'
-            const paOUndecimalElements = document.querySelectorAll('.pa-o-unicode');
+    document.addEventListener('DOMContentLoaded', function() {
+        const paOUndecimalElements = document.querySelectorAll('.pa-o-unicode');
 
-            paOUndecimalElements.forEach(function(element) {
-                // Get the Unicode value from the data-unicode attribute
-                const unicodeValue = element.dataset.unicode;
-                let svgFileName = '';
+        paOUndecimalElements.forEach(function(element) {
+            const unicodeValue = element.dataset.unicode;
+            let svgFileName = '';
 
-                // Map Unicode value to the correct SVG filename
-                switch (unicodeValue) {
-                    case '116D0': svgFileName = 'pa-o-digit-0.svg'; break; // U+116D0 for Pa'O Digit Zero
-                    case '116D1': svgFileName = 'pa-o-digit-1.svg'; break; // U+116D1 for Pa'O Digit One
-                    case '116D2': svgFileName = 'pa-o-digit-2.svg'; break; // U+116D2 for Pa'O Digit Two
-                    case '116D3': svgFileName = 'pa-o-digit-3.svg'; break; // U+116D3 for Pa'O Digit Three
-                    case '116D4': svgFileName = 'pa-o-digit-4.svg'; break; // U+116D4 for Pa'O Digit Four
-                    case '116D5': svgFileName = 'pa-o-digit-5.svg'; break; // U+116D5 for Pa'O Digit Five
-                    case '116D6': svgFileName = 'pa-o-digit-6.svg'; break; // U+116D6 for Pa'O Digit Six
-                    case '116D7': svgFileName = 'pa-o-digit-7.svg'; break; // U+116D7 for Pa'O Digit Seven
-                    case '116D8': svgFileName = 'pa-o-digit-8.svg'; break; // U+116D8 for Pa'O Digit Eight
-                    case '116D9': svgFileName = 'pa-o-digit-9.svg'; break; // U+116D9 for Pa'O Digit Nine
-                    // Add more cases here if you have other Pa'O digits (U+116D0 to U+116D9)
-                    default:
-                        console.warn('Unknown Pa\'O Unicode for SVG replacement:', unicodeValue);
-                        return; // Skip if it's not a known Pa'O digit
-                }
+            switch (unicodeValue) {
+                case '116D0': svgFileName = 'pa-o-digit-0.svg'; break;
+                case '116D1': svgFileName = 'pa-o-digit-1.svg'; break;
+                case '116D2': svgFileName = 'pa-o-digit-2.svg'; break;
+                case '116D3': svgFileName = 'pa-o-digit-3.svg'; break; // Pa'O Digit Three (U+116D3)
+                case '116D4': svgFileName = 'pa-o-digit-4.svg'; break;
+                case '116D5': svgFileName = 'pa-o-digit-5.svg'; break;
+                case '116D6': svgFileName = 'pa-o-digit-6.svg'; break;
+                case '116D7': svgFileName = 'pa-o-digit-7.svg'; break;
+                case '116D8': svgFileName = 'pa-o-digit-8.svg'; break;
+                case '116D9': svgFileName = 'pa-o-digit-9.svg'; break;
+                default:
+                    console.warn('Unknown Pa\'O Unicode for SVG replacement:', unicodeValue);
+                    return;
+            }
 
-                if (svgFileName) {
-                    // Fetch the SVG file content
-                    fetch(svgFileName)
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error(`Failed to load ${svgFileName}: ${response.statusText}`);
-                            }
-                            return response.text(); // Get SVG content as text
-                        })
-                        .then(svgText => {
-                            // Replace the <span> element's content with the SVG code
-                            element.innerHTML = svgText;
-                            // Add a class for potential styling (see <style> block above)
-                            element.classList.add('pa-o-digit-svg');
-                        })
-                        .catch(error => console.error('Error loading SVG for ' + unicodeValue + ':', error));
-                }
-            });
+            if (svgFileName) {
+                // *** ဒီနေရာကို ပြင်ဆင်ရပါမယ် ***
+                // SVG ဖိုင်က `font1` folder ထဲမှာ ရှိကြောင်း လမ်းကြောင်းထည့်ပေးရပါမယ်။
+                const pathToSvg = 'font1/' + svgFileName; // 'font1/' ကို ထည့်လိုက်ပါ
+                
+                fetch(pathToSvg) // ပြင်ဆင်ထားတဲ့ path ကို သုံးပါ
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to load ${pathToSvg}: ${response.statusText}`);
+                        }
+                        return response.text();
+                    })
+                    .then(svgText => {
+                        element.innerHTML = svgText;
+                        element.classList.add('pa-o-digit-svg');
+                    })
+                    .catch(error => console.error('Error loading SVG for ' + unicodeValue + ':', error));
+            }
         });
-    </script>
+    });
+</script>
 
 </body>
 </html>
